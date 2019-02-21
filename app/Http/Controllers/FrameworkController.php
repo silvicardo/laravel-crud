@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Framework;
 
 class FrameworkController extends Controller
 {
 
     public function index()
     {
-        //
+        dd(Framework::all());
     }
 
     public function create()
