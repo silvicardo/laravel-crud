@@ -13,6 +13,6 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('homePage');
 
 Route::resource('/frameworks', 'FrameworkController');
