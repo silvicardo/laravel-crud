@@ -21,7 +21,7 @@
                 <td>{{ $value }}</td>
             @endforeach
             <td>
-              <a class="btn btn-warning"href="{{ route('frameworks.edit', $framework->id)}}">Edit</a>
+              <a class="btn btn-warning"href="{{ route('frameworks.edit', $framework)}}">Edit</a>
             </td>
             <td>
               <form action="{{ route('frameworks.destroy', $framework->id)}}" method="POST">
