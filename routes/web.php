@@ -16,3 +16,5 @@ Route::get('/', function () {
 })->name('homePage');
 
 Route::resource('/frameworks', 'FrameworkController');
+
+Route::resource('/students', 'StudentController');

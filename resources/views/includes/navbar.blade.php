@@ -10,10 +10,16 @@
     <ul class="navbar-nav ml-auto">
       @foreach (config('navbarLinks') as $navLink => $routeName)
       <li class="nav-item mr-4">
-        <a class="nav-link text-uppercase" href="{{ route($routeName) }}">{{ $navLink }}</a>
+        @php
+          $linkClassesIfActivePage = Request::route()->getName() == $routeName ? 'bg-info active' : '';
+        @endphp
+        <a class="nav-link {{ $linkClassesIfActivePage }} text-uppercase" href="{{ route($routeName) }}">{{ $navLink }}</a>
       </li>
     @endforeach
     </ul>
-    <a class="btn btn-primary text-capitalize" href="{{ route('frameworks.create') }}">Crea nuovo</a>
+    @php
+      $routeEntity = explode('.', Request::route()->getName())[0];
+    @endphp
+    <a class="btn btn-primary text-capitalize" href="{{ route("$routeEntity.create") }}">Crea nuovo</a>
   </div>
 </nav>

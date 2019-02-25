@@ -21,7 +21,7 @@
         @include('includes.navbar')
 
         <div id="page_content">
-
+          @include('includes.errors')
           @yield('content')
 
         </div>
